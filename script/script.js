@@ -53,13 +53,11 @@ console.log(getMarks(students, marks));
 //   нечистою, але не повинна мутувати массив): [["Олександр і Олена", "Теорія
 // автоматів", 5], [...], [...]]
 
-function getRendomMark(studProjects) {
-  let result = [];
+const getRendomMark = (studProjects) => {
   for (let i = 0; i < studProjects.length; i++) {
     const randomMark = (Math.random() * (5 - 1) + 1).toFixed(0);
-    result.push([studProjects[i], randomMark]);
+    studProjects[i].push(randomMark);
   }
-  return result;
-} 
+  return studProjects;
+};
 console.log(getRendomMark(studProjects(students, themes)));
-
